@@ -1,0 +1,8 @@
+grpcio==1.62.0
+grpcio-tools==1.62.0
+websockets==11.0.3
+Flask==2.2.3
+Flask-SocketIO==5.3.3
+paho-mqtt==1.6.1
+requests==2.31.0
+Werkzeug==2.2.3

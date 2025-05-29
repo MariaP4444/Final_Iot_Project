@@ -1,0 +1,44 @@
+version: '3.8'
+
+services:
+  iot_gateway:
+    build:
+      context: ./IoT_Gateway
+    container_name: iot_gateway
+    ports:
+      - "50051:50051"  # gRPC
+      - "5000:5000"    # WebSocket
+      - "8000:8000"    # REST
+    networks:
+      - iot_net
+
+  sensor_grpc:
+    build:
+      context: ./Sensores/SensorGRPC
+    container_name: sensor_grpc
+    depends_on:
+      - iot_gateway
+    networks:
+      - iot_net
+  
+  sensor_ws:
+    build:
+      context: ./Sensores/SensorWS
+    container_name: sensor_ws
+    depends_on:
+      - iot_gateway
+    networks:
+      - iot_net
+
+  sensor_rest:
+    build:
+      context: ./Sensores/SensorRest
+    container_name: sensor_rest
+    depends_on:
+      - iot_gateway
+    networks:
+      - iot_net
+
+networks:
+  iot_net:
+    driver: bridge

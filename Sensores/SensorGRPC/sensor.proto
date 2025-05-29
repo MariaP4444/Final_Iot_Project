@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package sensor;
+
+service SensorService {
+    rpc SendData (OxygenData) returns (SensorResponse);  
+}
+
+message OxygenData {
+    int32 id = 1;
+    int32 heart_rate_bpm = 2;   //  frecuencia cardíaca (BPM)
+    int32 spo2_percent = 3;     // saturación de oxígeno (%)
+    int32 raw_ir = 4;           //  valor crudo del LED infrarrojo
+    int32 raw_red = 5;          // valor crudo del LED rojo
+    string timestamp = 6;       
+}
+
+message SensorResponse {
+    string message = 1;         
+}
