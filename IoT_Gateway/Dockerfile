@@ -21,7 +21,7 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Exponemos los puertos necesarios para gRPC, REST y WebSockets
-EXPOSE 50051 5000 8080
+EXPOSE 50051 5000 8080 8883
 
 # Copiamos el código fuente
 COPY . .
@@ -29,4 +29,6 @@ COPY . .
 RUN python -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. sensor.proto
 
 # Comando para ejecutar el IoT Gateway
-CMD ["python", "gateway.py"]
+RUN chmod +x start.sh
+CMD ["./start.sh"]
+# CMD ["python", "gateway.py"]
