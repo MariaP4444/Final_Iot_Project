@@ -20,7 +20,7 @@ def run():
             print(f"[Sensor REST] Sent: {data} | Response: {response.text}", flush=True)
         except Exception as e:
             print("[Sensor REST] Error sending data:", e)
-        time.sleep(5)
+        time.sleep(30)
 
 if __name__ == '__main__':
     run()

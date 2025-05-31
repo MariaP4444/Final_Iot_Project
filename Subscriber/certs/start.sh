@@ -34,4 +34,4 @@ fi
 # run pub/sub sample app using certificates downloaded in package
 printf "\nRunning pub/sub sample application...\n"
 cp -r aws-iot-device-sdk-python-v2/samples/utils utils
-python3 gateway.py --endpoint a2jo5uh3tq8430-ats.iot.us-east-1.amazonaws.com --ca_file root-CA.crt --cert MQTT_proyecto.cert.pem --key MQTT_proyecto.private.key --client_id basicPubSub --topic Hospital1/ --count 0
+python3 gateway.py --endpoint a2jo5uh3tq8430-ats.iot.us-east-1.amazonaws.com --ca_file root-CA.crt --cert MQTT_proyecto.cert.pem --key MQTT_proyecto.private.key --client_id basicPubSub --topic sdk/test/python --count 0
