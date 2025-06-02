@@ -1,0 +1,13 @@
+{
+  "version": "2.0",
+  "app_name": "api-rest1",
+  "stages": {
+    "dev": {
+      "api_gateway_stage": "dev",
+      "subnet_ids": ["subnet-0010195049c1ecd8e"],
+      "security_group_ids": ["sg-0c8200674df23c7b3"],
+      "manage_iam_role": false,
+      "iam_role_arn": "arn:aws:iam::845844714460:role/LabRole"
+    }
+  }
+}

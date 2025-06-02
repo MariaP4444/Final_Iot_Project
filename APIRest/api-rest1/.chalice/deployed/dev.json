@@ -1,0 +1,17 @@
+{
+  "resources": [
+    {
+      "name": "api_handler",
+      "resource_type": "lambda_function",
+      "lambda_arn": "arn:aws:lambda:us-east-1:845844714460:function:api-rest1-dev"
+    },
+    {
+      "name": "rest_api",
+      "resource_type": "rest_api",
+      "rest_api_id": "181jq0s9qh",
+      "rest_api_url": "https://181jq0s9qh.execute-api.us-east-1.amazonaws.com/dev/"
+    }
+  ],
+  "schema_version": "2.0",
+  "backend": "api"
+}

@@ -72,7 +72,7 @@ async def WSSensorService(websocket, path):
         async for message in websocket:
             data = json.loads(message)
             print(f"[WebSocket] Received from sensor {data.get('id')}: {data.get('heart_rate', 'N/A')} BPM at {data.get('timestamp')}", flush=True)
-            publish_to_mqtt("Hospital1/Sede1/Edificio1/Piso1/Area1/Habitación1/sensorMovimiento/sensor0", data)
+            publish_to_mqtt("Hospital1/Sede1/Edificio1/Piso2/Area1/Habitacion1/sensorMovimiento/sensor0", data)
             await websocket.send(json.dumps({"message": "Data received via WebSocket"}))
     except websockets.exceptions.ConnectionClosed:
         print(f"[WebSocket] Connection closed: {websocket.remote_address}", flush=True)
@@ -90,7 +90,7 @@ class GRPCSensorServiceNoMQTT(GRPCSensorService):
             "timestamp": request.timestamp
         }
         print(f"[gRPC] Received: {data}", flush=True)
-        publish_to_mqtt("Hospital1/Sede1/Edificio1/Piso2/Area1/Habitación1/sensorOxigenacion/sensor0", data)
+        publish_to_mqtt("Hospital1/Sede1/Edificio1/Piso1/Area1/Habitacion1/sensorOxigenacion/sensor0", data)
         return super().SendData(request, context)
 
 def start_grpc_server():
@@ -117,7 +117,7 @@ app = Flask(__name__)
 def receive_rest_data():
     data = request.json
     print(f"[REST] Received: {data}", flush=True)
-    publish_to_mqtt("Hospital1/Sede1/Edificio1/Piso1/Area1/Habitación1/sensorSonido/sensor0", data)
+    publish_to_mqtt("Hospital1/Sede1/Edificio1/Piso1/Area1/Habitacion1/sensorSonido/sensor0", data)
     return "REST data received", 200
 
 
