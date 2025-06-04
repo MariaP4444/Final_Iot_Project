@@ -283,3 +283,4 @@ Este proceso genera una URL accesible externamente que sirve como punto de entra
 | `GET`       | `/actuators`            | Obtiene el inventario completo de actuadores disponibles                  | SELECT en tabla `actuador`         |
 | `POST`      | `/actuators`            | Da de alta un nuevo actuador en la base de datos                          | INSERT en tabla `actuador`         |
 
+![](Esquemas/estrella.png)
