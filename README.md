@@ -71,7 +71,7 @@ Final_lot_Project/
 ![](Esquemas/arqui.png)
 ---
 
-##  Sensores Simulados y Arquitectura
+##  Sensores Simulados 
 
 Este proyecto simula un entorno hospitalario de IoT con sensores distribuidos, cada uno ejecutado en su propio contenedor Docker y comunicándose con un **Gateway** central, también en contenedor. El Gateway se encarga de recibir los datos por distintos protocolos (gRPC, REST, WebSocket) y reenviarlos a **AWS IoT Core** para su procesamiento en la nube.
 
